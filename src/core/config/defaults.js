@@ -95,6 +95,12 @@ const defaultOptions = Object.freeze({
     "video/",
   ],
 
+  deepSearch: {
+    enabled: false,
+    allowRuntimeScopeSelection: true,
+    scopes: null,
+  },
+
   uncaughtExceptionHandler: null,
 })
 

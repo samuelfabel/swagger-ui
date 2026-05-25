@@ -6,6 +6,7 @@ import ConfigsPlugin from "core/plugins/configs"
 import DeepLinkingPlugin from "core/plugins/deep-linking"
 import ErrPlugin from "core/plugins/err"
 import FilterPlugin from "core/plugins/filter"
+import DeepSearchPlugin from "core/plugins/deep-search"
 import IconsPlugin from "core/plugins/icons"
 import LayoutPlugin from "core/plugins/layout"
 import LogsPlugin from "core/plugins/logs"
@@ -45,6 +46,7 @@ const BasePreset = () => [
   DownloadUrlPlugin,
   DeepLinkingPlugin,
   FilterPlugin,
+  DeepSearchPlugin,
   OnCompletePlugin,
   RequestSnippetsPlugin,
   SyntaxHighlightingPlugin,

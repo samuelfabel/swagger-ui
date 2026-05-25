@@ -1,0 +1,72 @@
+@use "../../../../style/variables" as *;
+
+.deep-search-container {
+  .deep-search-input-row {
+    display: flex;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .deep-search-input {
+    flex: 1;
+    margin: 20px 0;
+  }
+
+  .deep-search-scope-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    width: 42px;
+    min-width: 42px;
+    height: 42px;
+    margin: 20px 0;
+    padding: 0;
+    border: 2px solid $operational-filter-input-border-color;
+    border-radius: 4px;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      border-color: $btn-border-color;
+      outline: none;
+    }
+  }
+}
+
+.dialog-ux.deep-search-modal {
+  .modal-ux-content {
+    padding: 20px 24px 28px;
+
+    .deep-search-modal-description {
+      margin: 0 0 16px;
+    }
+
+    .deep-search-scope-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .deep-search-scope-item {
+      margin-bottom: 10px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+      }
+
+      input {
+        margin: 0;
+      }
+    }
+  }
+}

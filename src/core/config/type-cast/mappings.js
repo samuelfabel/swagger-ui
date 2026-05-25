@@ -25,6 +25,10 @@ const mappings = {
     typeCaster: booleanTypeCaster,
     defaultValue: defaultOptions.deepLinking,
   },
+  deepSearch: {
+    typeCaster: objectTypeCaster,
+    defaultValue: defaultOptions.deepSearch,
+  },
   defaultModelExpandDepth: {
     typeCaster: numberTypeCaster,
     defaultValue: defaultOptions.defaultModelExpandDepth,

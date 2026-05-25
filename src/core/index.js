@@ -11,6 +11,7 @@ import ConfigsPlugin from "./plugins/configs"
 import DeepLinkingPlugin from "./plugins/deep-linking"
 import ErrPlugin from "./plugins/err"
 import FilterPlugin from "./plugins/filter"
+import DeepSearchPlugin from "./plugins/deep-search"
 import IconsPlugin from "./plugins/icons"
 import JSONSchema5Plugin from "./plugins/json-schema-5"
 import JSONSchema202012Plugin from "./plugins/json-schema-2020-12"
@@ -149,6 +150,7 @@ SwaggerUI.plugins = {
   DeepLining: DeepLinkingPlugin,
   Err: ErrPlugin,
   Filter: FilterPlugin,
+  DeepSearch: DeepSearchPlugin,
   Icons: IconsPlugin,
   JSONSchema5: JSONSchema5Plugin,
   JSONSchema5Samples: JSONSchema5SamplesPlugin,
