@@ -310,6 +310,16 @@ const extractOperationSchemas = (
   if (entry) entries.push(entry)
 }
 
+/**
+ * Extracts searchable index entries from an OpenAPI specification.
+ *
+ * Each entry represents searchable text for one operation and scope type.
+ * The index is rebuilt when the spec or active scopes change.
+ *
+ * @param {Object} spec - OpenAPI specification (plain JS object)
+ * @param {Object<string, boolean>} activeScopes - Enabled scope flags
+ * @returns {Array<Object>} Normalized search index entries
+ */
 export const extractSearchEntries = (spec, activeScopes) => {
   const entries = []
 

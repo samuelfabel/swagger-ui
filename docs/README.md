@@ -9,6 +9,7 @@ Welcome to the Swagger UI documentation!
 - [CORS](usage/cors.md)
 - [OAuth2](usage/oauth2.md)
 - [Deep Linking](usage/deep-linking.md)
+- [Deep Search](usage/deep-search.md)
 - [Limitations](usage/limitations.md)
 - [Version detection](usage/version-detection.md)
 

@@ -2,6 +2,11 @@
  * @prettier
  */
 
+/**
+ * HTTP methods recognized by OpenAPI/Swagger UI operation indexing.
+ *
+ * @type {string[]}
+ */
 export const OPERATION_METHODS = [
   "get",
   "put",
@@ -97,6 +102,16 @@ export const DEFAULT_SCOPES = ALL_SCOPE_KEYS.reduce((acc, key) => {
 
 export const resolveScopeKey = (scope) => SCOPE_ALIASES[scope] || scope
 
+/**
+ * Resolves the initial scope map from Deep Search configuration.
+ *
+ * When `scopes` is a non-empty array, only listed scopes are enabled.
+ * Otherwise, {@link DEFAULT_SCOPES} is used.
+ *
+ * @param {Object} [deepSearchConfig={}]
+ * @param {string[]|null} [deepSearchConfig.scopes]
+ * @returns {Object<string, boolean>}
+ */
 export const resolveInitialScopes = (deepSearchConfig = {}) => {
   const configScopes = deepSearchConfig.scopes
 

@@ -63,6 +63,21 @@ Parameter name | Docker variable | Description
         </td>
     </tr>
     <tr>
+        <td><a name="user-content-deepsearch"></a><code>deepSearch</code></td>
+        <td><em>Unavailable</em></td>
+        <td><code>Object</code>. Configures the Deep Search plugin for advanced
+            operation filtering across OpenAPI structures. See the
+            <a href="/docs/usage/deep-search.md">Deep Search documentation</a>
+            for details. Default is
+            <code>{ enabled: false, allowRuntimeScopeSelection: true, scopes: null }</code>.
+            <ul>
+                <li><code>enabled</code> (<code>Boolean=false</code>) — Enables Deep Search.</li>
+                <li><code>allowRuntimeScopeSelection</code> (<code>Boolean=true</code>) — Shows the scope selector UI when enabled.</li>
+                <li><code>scopes</code> (<code>Array</code> or <code>null</code>) — Initial or fixed list of searchable scope keys.</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
         <td><a name="user-content-displayoperationid"></a><code>displayOperationId</code>
         </td>
         <td><code>DISPLAY_OPERATION_ID</code></td>

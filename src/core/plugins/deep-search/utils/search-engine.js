@@ -3,12 +3,35 @@
  */
 import { OPERATION_METHODS } from "../constants"
 
+/** @type {Set<string>} HTTP methods that trigger strict method-based search. */
 export const HTTP_METHODS = new Set(OPERATION_METHODS)
 
+/**
+ * Normalizes a user search query for comparison.
+ *
+ * @param {string} query
+ * @returns {string}
+ */
 export const normalizeQuery = (query) => (query || "").trim().toLowerCase()
 
-export const isHttpMethodQuery = (query) => HTTP_METHODS.has(normalizeQuery(query))
+/**
+ * Returns true when the query matches a known HTTP method name.
+ *
+ * @param {string} query
+ * @returns {boolean}
+ */
+export const isHttpMethodQuery = (query) =>
+  HTTP_METHODS.has(normalizeQuery(query))
 
+/**
+ * Scores how well a text value matches a search query.
+ *
+ * @param {string} text - Indexed searchable text
+ * @param {string} query - User search query
+ * @param {Object} [options]
+ * @param {boolean} [options.strict=false] - When true, avoids loose substring matches (used for HTTP method queries)
+ * @returns {number} Score greater than zero when matched, otherwise zero
+ */
 export const fuzzyScore = (text, query, { strict = false } = {}) => {
   const haystack = (text || "").toLowerCase()
   const needle = normalizeQuery(query)
@@ -54,6 +77,17 @@ export const fuzzyScore = (text, query, { strict = false } = {}) => {
   return 0
 }
 
+/**
+ * Finds operations that match a query against a pre-built search index.
+ *
+ * HTTP method queries (for example, `post`) match all operations with that
+ * method, plus any scoped text matches using strict word rules.
+ *
+ * @param {Array} entries - Pre-built index entries from {@link buildIndex}
+ * @param {string} query - User search query
+ * @param {Object<string, boolean>} activeScopes - Enabled scope flags
+ * @returns {Map<string, Object>|null} Matches keyed by `method:path`, or null when query is empty
+ */
 export const searchEntries = (entries, query, activeScopes) => {
   const normalizedQuery = normalizeQuery(query)
 
